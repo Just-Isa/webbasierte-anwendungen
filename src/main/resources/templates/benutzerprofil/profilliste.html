@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body class="bg-dark">
+        <div class="bg-secondary p-b-3">
+            <div class="row">
+                <h1 class="mb-3 mt-3 col-12 link-danger text-center" th:text="#{profilliste.titel}"></h1>
+                <div class="col-1"></div>
+                <a class="col-2 btn btn-primary p-r-5" th:href="@{?sprache=de}">DE</a>
+                <div class="col-1"></div>
+                <a class="col-2 btn btn-primary" th:href="@{?sprache=nl}">NL</a>
+                <div class="col-1"></div>
+                <a class="col-2 btn btn-primary btn" th:href="@{?sprache=en}">EN</a>
+                <div class="col-1"></div>
+                <a th:href="@{/benutzerprofil/clearsession}" class="col-1 btn btn-danger">CLEAR</a>
+                <div class="col-1"></div>
+            </div>
+        </div>
+        <table id="example" class="table table-bordered text-light" style="width: 100%">
+            <thead>
+            <tr>
+                <th th:text="#{profilliste.tab.name}">Name</th>
+                <th th:text="#{profilliste.tab.geburtsdatum}">Geburtsdatum</th>
+                <th th:text="#{profilliste.tab.email}">Email</th>
+                <th th:text="#{profilliste.tab.adresse}">Adresse</th>
+                <th th:text="#{profilliste.tab.loeschen}">Löschen</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="benutzer : ${nutzer}">
+                <td>
+                    <a th:href="@{liste?op=bearbeiten&id={idUser}(idUser=${benutzer.id})}" th:text="${benutzer.name}"></a>                    
+                </td>
+                <td th:text="${benutzer.geburtsdatum}">Geburtsdatum</td>
+                <td th:text="${benutzer.email}">email</td>
+                <td th:text="${benutzer.adresse}">Adresse</td>
+                <td>
+                    <a th:href="@{liste?op=loeschen&id={idUser}(idUser=${benutzer.id})}" class="btn btn-danger">X</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </body>

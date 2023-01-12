@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" 
+            href="profileditor.css"/>
+    </head>
+    <body class="bg-dark">
+        <div class="bg-secondary p-b-3">
+            <div class="row">
+                <h1 class="mb-3 mt-3 col-12 link-danger text-center" th:text="#{angebot.editor.titel}"></h1>
+                <div class="col-1"></div>
+                <a class="col-2 btn btn-primary p-r-5" th:href="@{?sprache=de}">DE</a>
+                <div class="col-1"></div>
+                <a class="col-2 btn btn-primary" th:href="@{?sprache=nl}">NL</a>
+                <div class="col-1"></div>
+                <a class="col-2 btn btn-primary btn" th:href="@{?sprache=en}">EN</a>
+                <div class="col-1"></div>
+                <a th:href="@{/benutzerprofil/clearsession}" class="col-1 btn btn-danger">CLEAR</a>
+                <div class="col-1"></div>
+            </div>
+        </div>
+        <div class="form-group panel panel-default text-light">
+            <form th:action="@{/benutzerprofil/angebot}" th:method="post"
+                    th:object="${angebot}" >
+
+                <div class="form-group row mt-4">
+                    <label for="beschreibung" class="col-sm-4 text-right col-form-label" th:text="#{angebot.editor.beschreibung}">Beschreibung</label>
+                    <input class="justify-content-center col-sm-3 rounded border border-light" type="text" th:field="*{beschreibung}" name="beschreibung" th:errorclass="falschEingabe">
+                    <p class="col-sm-5 text-left" th:if="${#fields.hasErrors('beschreibung')}" th:errors="*{beschreibung}" style="color:red;">Beschreibung Falsch!</p>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="mindestpreis" class="col-sm-4 text-right col-form-label" th:text="#{angebot.editor.mindestpreis}">Mindestpreis</label>
+                    <input class="justify-content-center col-sm-3 rounded border border-light" type="number" th:field="*{mindestpreis}" name="mindestpreis" th:errorclass="falschEingabe">
+                    <p class="col-sm-5 text-left" th:if="${#fields.hasErrors('mindestpreis')}" th:errors="*{mindestpreis}" style="color:red;">Adresse Falsch!</p>
+                </div>
+
+                <div class="form-group row">
+                    <label for="angebotsende" class="col-sm-4 text-right col-form-label" th:text="#{angebot.editor.ablaufzeitpunkt}">Angebotsende</label>
+                    <input class="justify-content-center col-sm-3 rounded border border-light" type="datetime-local" th:field="*{ablaufzeitpunkt}" name="angebotsende" th:errorclass="falschEingabe">
+                    <p class="col-sm-5 text-left" th:if="${#fields.hasErrors('ablaufzeitpunkt')}" th:errors="*{geburtsdatum}" style="color:red;">datum falsch</p>
+                </div>
+
+                <div class="form-group row">
+                    <label for="abholort" class="col-sm-4 text-right col-form-label" th:text="#{angebot.editor.abholort}">Abholort</label>
+                    <input class="justify-content-center col-sm-3 rounded border border-light" type="text" th:field="*{abholort}" name="abholort" th:errorclass="falschEingabe">
+                    <p class="col-sm-5 text-left"  th:if="${#fields.hasErrors('abholort')}" th:errors="*{abholort}" style="color:red;">email falsch</p>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-10 text-center">
+                            <input type="submit" class="justify-content-center btn btn-primary" th:value="#{angebot.editor.speichern}">
+                            <a class="justify-content-center btn btn-danger" th:text="#{profil.abbrechen}" th:href="@{~/benutzerprofil}"></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

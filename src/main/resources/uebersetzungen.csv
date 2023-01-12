@@ -1,0 +1,39 @@
+propertyname;de;en;nl
+profil.ihredaten;Ihre Daten;Your data;Uw gegevens
+profil.name;Name;Name;Naam
+profil.geburtsdatum;Geburtsdatum;Date of birth;Geboortedatum
+profil.adresse;Anschrift;Street address;Adres
+profil.email;Digitale Postanschrift;EMail address;Digitaal postadres
+profil.lieblingsfarbe;Lieblingsfarbe;Favourite colour;Favoriete kleur
+profil.interessen;Hobbies;Hobbies;Hobby's
+profil.speichern;abspeichern;save;opslaan
+profil.abbrechen;abbrechen;cancel;anuleren
+profil.bearbeiten;bearbeiten;edit;bewerken
+profil.meinstandort;Mein Standort;My location;Mijn locatie
+profilansicht.titel;Benutzerprofil;User profile;Gebruikersprofiel
+profilansicht.endsession;Sitzung beenden;end session;sessie sluiten
+profilbearbeiten.titel;Benutzerprofil bearbeiten;Edit user profile;Gebruikersprofiel wijzigen
+profilbearbeiten.interessen;Hobbies (durch Kommata getrennt);Hobbies (comma-separated list);Hobbies (gescheiden door komma's)
+profilliste.titel;Benutzerprofil-Liste;List of User Profiles;Lijstje van Gebruikersprofielen
+profilliste.tab.name;Name;Name;Naam
+profilliste.tab.geburtsdatum;Geb.;born;geb
+profilliste.tab.email;EPost;EMail;email
+profilliste.tab.adresse;aus;from;uit
+profilliste.tab.loeschen;löschen;delete;wissen
+profil.angebote.titel;Angebote;Offerings;Aanbiedingen
+profil.angebote.anlegen;neu;new;nieuw
+angebotsliste.titel;Ihre Angebote;Your offerings;Jouw Aanbiedingen
+angebot.editor.titel;Angebot bearbeiten;Edit offering;Aanbieding bewerken
+angebot.editor.beschreibung;Beschreibung;Description;Beschrijving
+angebot.editor.mindestpreis;Mindestpreis;Minimum price;Minimumprijs
+angebot.editor.ablaufzeitpunkt;Angebotsende;End of offer;Einde van het aanbot
+angebot.editor.abholort;Abholort;Pick-up location;Verzamellocatie
+angebot.editor.speichern;speichern;save;opslaan
+profil.logout;ausloggen;log out;uitloggen
+profil.eingeloggtals;Sie sind eingeloggt als;You are logged is as;Je bent ingelogd als
+registeruser.titel;Benutzer registrieren;register user;gebruiker registreren
+registeruser.ihredaten;Ihre Registrierung;Your registration;Uw inschrijving
+registeruser.username;Ihr gewählter Login-Name;Your chosen login name;Uw gekozen inlognaam
+registeruser.password;Losung;Password;Wachtwoord
+registeruser.speichern;abspeichern;save;opslaan
+registeruser.abbrechen;abbrechen;cancel;anuleren

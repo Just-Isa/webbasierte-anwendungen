@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" 
+            href="profileditor.css"/>
+    </head>
+    <body class="bg-dark">
+        <div class="bg-secondary p-b-3">
+            <div class="row">
+                <h1 class="mb-3 mt-3 col-12 link-danger text-center" th:text="#{profilbearbeiten.titel}"></h1>
+                <div class="col-1"></div>
+                <a class="col-2 btn btn-primary p-r-5" th:href="@{?sprache=de}">DE</a>
+                <div class="col-1"></div>
+                <a class="col-2 btn btn-primary" th:href="@{?sprache=nl}">NL</a>
+                <div class="col-1"></div>
+                <a class="col-2 btn btn-primary btn" th:href="@{?sprache=en}">EN</a>
+                <div class="col-1"></div>
+                <a th:href="@{/benutzerprofil/clearsession}" class="col-1 btn btn-danger">CLEAR</a>
+                <div class="col-1"></div>
+            </div>
+        </div>
+        <div class="form-group panel panel-default text-light">
+            <form th:action="@{/benutzerprofil/bearbeiten}" th:method="post"
+                    th:object="${profil}" >
+                <h1 class="col-sm-11 mb-3 mt-3 justify-content-center text-center" th:text="#{profil.ihredaten}">Benutzereditor</h1>
+
+                <div class="form-group row">
+                    <label for="name" class="col-sm-4 text-right col-form-label" th:text="#{profil.name}">Name</label>
+                    <input class="justify-content-center col-sm-3 rounded border border-light" type="text" th:field="*{name}" name="name" th:errorclass="falschEingabe">
+                    <p class="col-sm-5 text-left" th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color:red;">Name Falsch!</p>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="adresse" class="col-sm-4 text-right col-form-label"  th:text="#{profil.adresse}">Adresse</label>
+                    <input class="justify-content-center col-sm-3 rounded border border-light" type="text" th:field="*{adresse}" name="adresse" th:errorclass="falschEingabe">
+                    <p class="col-sm-5 text-left" th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}" style="color:red;">Adresse Falsch!</p>
+                </div>
+
+                <div class="form-group row">
+                    <label for="gebdat" class="col-sm-4 text-right col-form-label"  th:text="#{profil.geburtsdatum}">Geburtsdatum</label>
+                    <input class="justify-content-center col-sm-3 rounded border border-light" type="date" th:field="*{geburtsdatum}" name="gebdat" th:errorclass="falschEingabe">
+                    <p class="col-sm-5 text-left" th:if="${#fields.hasErrors('geburtsdatum')}" th:errors="*{geburtsdatum}" style="color:red;">datum falsch</p>
+                </div>
+
+                <div class="form-group row">
+                    <label for="eMail" class="col-sm-4 text-right col-form-label" th:text="#{profil.email}">eMail</label>
+                    <input class="justify-content-center col-sm-3 rounded border border-light" type="text" th:field="*{email}" name="eMail" th:errorclass="falschEingabe">
+                    <p class="col-sm-5 text-left"  th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color:red;">email falsch</p>
+                </div>
+
+                <div class="form-group row">
+                    <label for="favcol" class="col-sm-4 text-right col-form-label"  th:text="#{profil.lieblingsfarbe}">Lieblingsfarbe</label>
+                    <input class="justify-content-center col-sm-3 border border-light" type="color" th:field="*{Lieblingsfarbe}" name="favcol">
+                    <p class="col-sm-5 text-left"  th:if="${#fields.hasErrors('lieblingsfarbe')}" th:errors="*{lieblingsfarbe}" style="color:red;">Farbe Falsch!</p>
+                </div>
+
+                <div class="form-group row">
+                    <label for="interessen" class="col-sm-4 text-right col-form-label"  th:text="#{profilbearbeiten.interessen}">Interessen</label>
+                    <input class="justify-content-center col-sm-3 rounded border border-light"  type="text" th:field="*{interessen}" name="interessen">
+                    <p class="col-sm-5 text-left"  th:if="${#fields.hasErrors('interessen')}" th:errors="*{interessen}" style="color:red;">Adresse Falsch!</p>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-10 text-center">
+                            <input type="submit" class="justify-content-center btn btn-primary" th:value="#{profil.speichern}">
+                            <a class="justify-content-center btn btn-danger" th:text="#{profil.abbrechen}" th:href="@{~/benutzerprofil}"></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
