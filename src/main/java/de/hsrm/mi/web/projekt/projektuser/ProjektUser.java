@@ -8,8 +8,6 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-
 import de.hsrm.mi.web.projekt.benutzerprofil.BenutzerProfil;
 
 @Entity
